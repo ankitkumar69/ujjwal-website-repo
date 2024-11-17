@@ -1,13 +1,55 @@
 
 
+
+
+
 function Footer() {
+  const arr1 = [
+    {
+      title: "Get To Know Us",
+      sublink: ["About Us", "Careers", "Press REleases", "Amazon Science"],
+    },
+    {
+      title: "Connect with Us",
+      sublink: ["Facebook", "Twitter", "Instagram"],
+    },
+   
+    {
+      title: "Let Us Help You",
+      sublink: [
+        "your Account",
+        "100% Purchase Protection",
+        "Help",
+      ],
+    },
+  ];
+
+ 
   return (
-    <div className="bg-white shadow-lg">
-      <div className="max-w-[1400px] mx-auto px-4">
-         this is the footer
+    <div className="bg-gray-600">
+      <div className="">
+        <div className=" max-w-[1400px] mx-auto p-4 flex justify-between text-white">
+          {arr1.map((item, index) => (
+            <ul key={index}>
+              {item.sublink.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          ))}
+        </div>
+
+        <div className="text-white">
+          <hr className=" "></hr>
+        
+          </div>
+        </div>
+        <div className=" text-white text-center p-4 ">
+          <p>Condition of Use &Sale Privacy Notice Interest-Based Ads</p>
+          <p>C 2024, Amazon.com,inc.or its affiliates</p>
+        </div>
       </div>
-    </div>
-  )
+  
+  );
 }
 
-export default Footer
+export default Footer;

@@ -1,9 +1,13 @@
+import Hero from "./hero";
+import Slider from "./slider";
 function Home() {
   return (
     <div>
-      <div className="max-w-[1400px] mx-auto">
-        This is Home page of the property page
-      </div>
+      <div >
+      
+         <Hero />
+         <Slider />
+      </div> 
     </div>
   );
 }

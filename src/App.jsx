@@ -1,6 +1,8 @@
 
+import Featured from "./Featured.jsx";
 import Register from "./Register.jsx";
 import AnotherNav from "./anotherNav.jsx";
+import Contact from "./contact.jsx";
 import Footer from "./footer.jsx";
 import Home from "./home.jsx";
 import Info from "./info.jsx";
@@ -19,7 +21,10 @@ function App() {
          <Info />
         <AnotherNav />
         <Outlet />
+        <Featured />
+        <Contact />
         <Footer />
+      
       </div>
     );
   };

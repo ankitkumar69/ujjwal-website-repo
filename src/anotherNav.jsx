@@ -2,7 +2,7 @@
 
 const NavBar = () => {
   return (
-    <nav className="bg-white shadow-lg ">
+    <nav className="bg-white shadow-lg">
       <div className="max-w-[1400px] mx-auto px-4 ">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
@@ -17,7 +17,7 @@ const NavBar = () => {
             <input
               type="text"
               className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none"
-              placeholder="Search for products"
+              placeholder="Search for our property"
             />
           </div>
 
