@@ -1,14 +1,21 @@
+import Contact from "./contact";
+import Featured from "./Featured";
 import Hero from "./hero";
+import Nav from "./nav"
 import Slider from "./slider";
 function Home() {
   return (
-    <div>
-      <div >
+    <div className="bg-gray-300">
+     
       
          <Hero />
-         <Slider />
+       
+         <Featured />
+         {/* <Slider /> */}
+         <Contact />
+    
       </div> 
-    </div>
+   
   );
 }
 

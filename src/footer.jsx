@@ -28,17 +28,17 @@ function Footer() {
   return (
     <div className="bg-gray-600">
       <div className="">
-        <div className=" max-w-[1400px] mx-auto p-4 flex justify-between text-white">
+        <div className=" max-w-[1400px] mx-auto p-4 flex justify-between text-xs text-white">
           {arr1.map((item, index) => (
             <ul key={index}>
               {item.sublink.map((item, index) => (
-                <li key={index}>{item}</li>
+                <li key={index} className="cursor-pointer hover:underline">{item}</li>
               ))}
             </ul>
           ))}
         </div>
 
-        <div className="text-white">
+        <div className="text-white text-xs">
           <hr className=" "></hr>
         
           </div>

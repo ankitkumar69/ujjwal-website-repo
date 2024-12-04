@@ -1,6 +1,35 @@
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { useState} from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-function login() {
+function Login() {
+
+
+  const [useremail, setuseremail] = useState("");
+  const [password, setpassword] = useState("");
+
+  const [Error, setError] = useState(null);
+  const Navigate = useNavigate();
+
+  const handleloginsubmit = async () => {
+    try {
+      const loginpost = await axios.post(
+        "http://localhost:4000/api/login",
+        { useremail, password },
+        { withCredentials: true }
+      );
+
+      setError(loginpost.data);
+      if (loginpost) {
+        Navigate("/");
+      }
+
+      localStorage.setItem("logininfo", JSON.stringify(loginpost.data));
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
   return (
     //  login
     <div className="min-h-[80vh] flex justify-center items-center ">
@@ -12,8 +41,10 @@ function login() {
           <input
             className="border-2 border-solid border-grey py-2 px-6"
             type="text"
-            name="username"
+            pattern="ankit@gmail.com"
+            name="email"
             placeholder="E-mail"
+            onChange={(e)=>setuseremail(e.target.value)}
           ></input>{" "}
         </div>
         <div className="col-span-2 mx-auto flex ">
@@ -22,16 +53,18 @@ function login() {
             type="password"
             name="username"
             placeholder="Password"
+            onChange={(e)=>setpassword(e.target.value)}
           ></input>{" "}
         </div>
-
-        <button className="col-span-2 block w-60 px-4 py-2 mt-8 bg-blue-600 text-white rounded-lg hover:bg-blue-700  font-semibold">
+              <p className="mx-auto col-span-2 text-red-600 "> {Error&&Error}</p>
+        <button className="col-span-2 block w-60 px-4 py-2 mt-8 bg-blue-600 text-white rounded-lg hover:bg-blue-700  font-semibold" onClick={handleloginsubmit}>
           Login
         </button>
-         <p className="col-span-2">Don't have an Account?<span className="text-blue-700"><Link to={"/register"}>Register</Link></span></p>
+       
+         <p className="col-span-2">Don&apos;t have an Account?<span className="text-blue-700"><Link to={"/register"}>Register</Link></span></p>
       </div>
     </div>
   );
 }
 
-export default login;
+export default Login;

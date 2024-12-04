@@ -1,30 +1,26 @@
-
-import Featured from "./Featured.jsx";
 import Register from "./Register.jsx";
+import Allproperty from "./allproperty.jsx";
 import AnotherNav from "./anotherNav.jsx";
-import Contact from "./contact.jsx";
+
 import Footer from "./footer.jsx";
 import Home from "./home.jsx";
 import Info from "./info.jsx";
 import Login from "./login.jsx";
-import {
-  RouterProvider,
-  Outlet,
-  createBrowserRouter,
-
-} from "react-router-dom";
+import About from "./about.jsx";
+import { RouterProvider, Outlet, createBrowserRouter } from "react-router-dom";
+import Addproperty from "./Addproperty.jsx";
+import Manageprop from "./Manageprop.jsx";
+import Addadmin from "./Addadmin.jsx";
+import Edit from "./edit.jsx";
 // import Practice from './practice.jsx'
 function App() {
   const Layout = () => {
     return (
       <div>
-         <Info />
+        <Info />
         <AnotherNav />
         <Outlet />
-        <Featured />
-        <Contact />
         <Footer />
-      
       </div>
     );
   };
@@ -32,10 +28,11 @@ function App() {
     {
       path: "/",
       element: <Layout />,
-      children: [{
-          path:"/",
-          element:<Home />
-      },
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
         {
           path: "/register",
           element: <Register />,
@@ -43,6 +40,30 @@ function App() {
         {
           path: "/login",
           element: <Login />,
+        },
+        {
+          path: "/allproperty",
+          element: <Allproperty />,
+        },
+        {
+          path: "/about",
+          element: <About />,
+        },
+        {
+          path: "/addproperty",
+          element: <Addproperty />,
+        },
+        {
+          path: "/manageproperty",
+          element: <Manageprop />,
+        },
+        {
+          path: "/addadmin",
+          element: <Addadmin />,
+        },
+        {
+          path: "/edit/:id",
+          element: <Edit />,
         },
       ],
     },

@@ -65,11 +65,11 @@ function slider() {
   ]
 
   const settings = {
-    dots: true,
-    // arrow:true,
+    dots: false,
+    arrow:true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4, // Number of slides to show
+    slidesToShow: 3, // Number of slides to show
     slidesToScroll: 1, // Number of slides to scroll at once
     responsive: [
       {
@@ -78,7 +78,7 @@ function slider() {
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
-          dots: true
+          dots: false
         }
       },
       {
@@ -87,7 +87,7 @@ function slider() {
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
-          dots: true
+          dots: false
         }
       },
       {
@@ -101,14 +101,16 @@ function slider() {
   };
 
   return (
- 
-      <Slider {...settings} className='slider' >
+       <div className=' '>
+      <div className='max-w-[1400px] mx-auto p-2'>
+        <h3 className='text-xl text-black   font-bold font-sans'> Our Best Deals</h3>
+      <Slider {...settings} >
 
        {data.map((item)=><Card key={item} {...item} />)}
 
       </Slider>
-
-    
+      </div>
+      </div>
 
 
 

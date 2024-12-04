@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const textVariants = {
   initial: {
@@ -27,7 +28,7 @@ const sliderVariants = {
     x: 0,
   },
   animate: {
-    x: "-220%",
+    x: "-200%",
     transition: {
       repeat: Infinity,
       repeatType: "mirror",
@@ -38,45 +39,39 @@ const sliderVariants = {
 
 const Hero = () => {
   return (
-    <div className="max-w-full h-[400px] bg-blue-400">
-      <div className=" max-w-full mx-auto my-[-6px] relative ">
+    <div className="max-w-full  relative">
+      <div className=" max-w-full mx-auto  relative ">
         <img src="./image/imghouse.png" alt="heroimg" className="h-[400px] w-full object-cover"></img>
         <motion.div
-          className=" absolute top-24 left-40"
+          className=" absolute p-3  top-24 left-4 md:left-32 "
           variants={textVariants}
           initial="initial"
           animate="animate"
         >
-          <motion.h2 className="mt-4 text-2xl font-bold text-white" variants={textVariants}>
+          <motion.h2 className="ml-0 text-2xl font-bold text-white" variants={textVariants}>
             Breath a new way of living
           </motion.h2>
-          <motion.p className="mt-4 font-semibold text-white" variants={textVariants}>
+          <motion.p className=" font-semibold mt-3  text-white" variants={textVariants}>
             Lorem this is the used to provide the text for the dummy text for
             designing the website
           </motion.p>
-          <motion.div variants={textVariants} className="">
-            <button className=" rounded mt-7 bg-white  p-3">Explore Our Property</button>
+          <motion.div variants={textVariants} className="mt-3 ">
+           <Link to="/allproperty"> <button className=" rounded-full font-bold  bg-white  p-3">Explore Our Property</button></Link>
           </motion.div>
-          <motion.div variants={textVariants} className="mt-4 ">
-            <motion.button className="mt-4 text-blue-600 font-semibold mx-2" variants={textVariants}>
-              Best Deal
-            </motion.button>
-            <motion.button variants={textVariants} className="text-blue-600 font-semibold">Contact Us</motion.button>
-          </motion.div>
-        </motion.div>
-      </div>
-      <motion.div
-        className="absolute"
+       
+          <motion.div
+        className="absolute text-white text-xs"
         variants={sliderVariants}
         initial="initial"
         animate="animate"
       >
         Property Babu
       </motion.div>
-      
-      <div className="">
-        <img src="/man.png" alt="" />
+        </motion.div>
       </div>
+    
+      
+      
     </div>
   );
 };

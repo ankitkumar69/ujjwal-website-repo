@@ -7,6 +7,10 @@ function TextInput(props) {
         type={props?.type}
         name={props?.name}
         onChange={props?.onChange}
+        min={props?.min}
+        max={props?.max}
+        value={props?.value}
+
       ></input>
     </div>
   );
