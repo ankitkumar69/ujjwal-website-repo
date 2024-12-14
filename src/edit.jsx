@@ -44,9 +44,7 @@ function Edit() {
     seterr(null);
     setbuttonloading(true);
     try {
-      //  const  multiurl = await multiuploadfile(multiplefile)
-      //  console.log(multiurl);
-
+    
       const res = await axios.put(
         `http://localhost:4000/api/updateproperty/${params.id}`,{...Editproperty},
         { withCredentials: true }

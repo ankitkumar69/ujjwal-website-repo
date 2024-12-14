@@ -5,65 +5,31 @@ import Card from './Card'
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css'
-function slider() {
-  const data = [
+import { useEffect } from 'react';
+import axios from 'axios';
+import { useState } from 'react';
 
-    {
-      id: 99,
-      price: "880",
-      src:"/images/bigb2.avif",
-      city: "Delhi",
-      summary: "or bahi kya hall chal hain ghar kaise laga"
-    },
-    {
-      id: 100,
-      price: "100",
-      src:"/images/bigb2.avif",
-      city: "Delhi",
-      summary: "or bahi kya hall chal hain ghar kaise laga"
-    },
-    {
-      id: 101,
-      price: "5000",
-      src:"/images/bigb2.avif",
-      city: "Delhi",
-      summary: "or bahi kya hall chal hain ghar kaise laga"
-    },
-    {
-      id: 102,
-      price: "8000",
-      src:"/images/bigb2.avif",
-      city: "Delhi",
-      summary: "or bahi kya hall chal hain ghar kaise laga"
-    }, 
-    {
-      id: 103,
-      price: "880",
-      src:"/images/bigb2.avif",
-      city: "Delhi",
-      summary: "or bahi kya hall chal hain ghar kaise laga"
 
-    }, 
-    {
-      id: 104,
-      price: "880",
-      src:"/images/bigb2.avif",
-      city: "Delhi",
-      summary: "or bahi kya hall chal hain ghar kaise laga"
 
-    }, 
-    
-    {
-      id: 105,
-      price: "880",
-      src:"/images/bigb2.avif",
-      city: "Delhi",
-      summary: "or bahi kya hall chal hain ghar kaise laga"
+function Slidersection() {
+  
 
-    }
+  
+ 
+     const [Alldata,setAlldata]=useState([]) 
+     const [error,seterror]=useState(null) 
 
-  ]
+      useEffect(()=>{
+             const getallproperty=async()=>{
+                     const properties= await axios.get("http://localhost:4000/api/allland");
+                     setAlldata(properties.data)
+             }
 
+                getallproperty()
+      },[])
+ 
+        console.log(Alldata)
+       
   const settings = {
     dots: false,
     arrow:true,
@@ -101,15 +67,17 @@ function slider() {
   };
 
   return (
-       <div className=' '>
-      <div className='max-w-[1400px] mx-auto p-2'>
+     <div className=' '>
+       
+      {Alldata?.length >1 && <div className='max-w-[1400px] pb-7 mx-auto p-2'>
         <h3 className='text-xl text-black   font-bold font-sans'> Our Best Deals</h3>
-      <Slider {...settings} >
-
-       {data.map((item)=><Card key={item} {...item} />)}
-
-      </Slider>
-      </div>
+        <p className='mx-auto'>{error &&error}</p>
+      
+         <Slider {...settings}>
+          {Alldata?.map((item,i)=><Card key={i} {...item}></Card>)}
+          </Slider>
+   
+      </div>}
       </div>
 
 
@@ -118,5 +86,5 @@ function slider() {
   )
 }
 
-export default slider
+export default Slidersection
 

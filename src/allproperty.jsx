@@ -9,7 +9,7 @@ const Allproperty = () => {
   const [filterstate, setFilteredstate] = useState(); // Stores filtered data
   const [Error ,setError]=useState();
   const [Loading ,setLoading]=useState();
-  const [Allcard ,setAllcard]=useState();
+  const [Allcard ,setAllcard]=useState([]);
 
    const [filterOpen,setfilterOpen]=useState(false);
 
@@ -39,7 +39,7 @@ const Allproperty = () => {
       getallproperty();
     }, []);
   
- 
+  console.log(Allcard)
 
   return (
     <div className="p-4 min-h-screen">
@@ -79,7 +79,7 @@ const Allproperty = () => {
              
           {/* all the properties are listed here  */}
            <div className="flex flex-wrap  gap-5 mt-2">
-            {Allcard?.map((item,index)=>{
+            {Allcard?.length===0? <p className="text-red-600 mx-auto"> No Property Available !</p> :  Allcard?.map((item,index)=>{
                 return  <Card  {...item} key={index} />
             })}
            </div>

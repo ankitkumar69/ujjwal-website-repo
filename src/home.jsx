@@ -1,7 +1,7 @@
 import Contact from "./contact";
 import Featured from "./Featured";
 import Hero from "./hero";
-import Nav from "./nav"
+
 import Slider from "./slider";
 function Home() {
   return (
@@ -11,7 +11,7 @@ function Home() {
          <Hero />
        
          <Featured />
-         {/* <Slider /> */}
+         <Slider />
          <Contact />
     
       </div> 

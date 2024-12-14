@@ -58,7 +58,7 @@ const NavBar = () => {
               >
                 <img
                   src={registeruser?registeruser?.profileImg:loginuser?.profileImg||"./image/bg-img-feature.png"}
-                  className="w-9 h-9 rounded-full"
+                  className="w-9 h-9 border border-black rounded-full"
                 ></img>
                 <span className="inline-block">{registeruser?  registeruser?.firstname+" "+registeruser?.lastname:loginuser?.firstname+" "+loginuser.lastname}</span>
                 {dropdown && (
@@ -83,7 +83,7 @@ const NavBar = () => {
                 )}
               </div>
             ) : (
-              <div className="hidden md:block">
+              <div className=" md:block">
                 <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
                   <Link to={"/login"}> Login</Link>
                 </button>
