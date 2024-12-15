@@ -30,7 +30,7 @@ const NavBar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to={"/"}>
-              <span className="text-2xl font-bold text-gray-800">MyLogo</span>
+              <span className="text-2xl font-bold text-gray-800">MLogo</span>
             </Link>
           </div>
 
