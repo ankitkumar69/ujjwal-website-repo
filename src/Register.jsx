@@ -49,12 +49,7 @@ function Register() {
     } else if (data.password.length < 6) {
       validationErrors.password = "Password must be at least 6 characters";
     }
-    if (!data.confirmpassword) {
-      validationErrors.confirmpassword = "Password doen't match";
-    } else if (data.password.length < 6) {
-      validationErrors.password = "Password must be at least 6 characters";
-    }
-
+  
     return validationErrors;
   };
 
@@ -78,7 +73,7 @@ function Register() {
         // this return the url in url
         const url = await singlePicUpload(profilepic);
         const registerres = await Axios.post(
-          `https://ujjwal-backend.onrender.com/api/register`,
+          `http://https://ujjwal-backend.onrender.com/api/register`,
           { ...form, profileImg: url },
           { withCredentials: true }
         );
