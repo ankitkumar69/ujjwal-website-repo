@@ -47,7 +47,7 @@ function Addproperty() {
         
     
           await axios.post(
-            `http://localhost:4000/api/create`, { ...form, },{withCredentials: true });
+            `https://ujjwal-backend.onrender.com/api/create`, { ...form, },{withCredentials: true });
     
           Navigate("/manageproperty");
        

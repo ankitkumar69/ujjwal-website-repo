@@ -26,7 +26,7 @@ function Edit() {
   useEffect(() => {
     const getsingleproperty = async () => {
       const res = await axios.get(
-        `http://localhost:4000/api/getsingleproperty/${params.id}`,
+        `https://ujjwal-backend.onrender.com/api/getsingleproperty/${params.id}`,
         { withCredentials: true }
       );
       console.log(res.data)
@@ -46,7 +46,7 @@ function Edit() {
     try {
     
       const res = await axios.put(
-        `http://localhost:4000/api/updateproperty/${params.id}`,{...Editproperty},
+        `https://ujjwal-backend.onrender.com/api/updateproperty/${params.id}`,{...Editproperty},
         { withCredentials: true }
       );
              console.log(res.data)

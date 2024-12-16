@@ -17,7 +17,7 @@ function Addadmin() {
     const updateHandler= async()=>{
 
       try{
-      await Axios.put(`http://localhost:4000/api/updateuser?${queryParams.toString()}`,{withCredentials:true})
+      await Axios.put(`https://ujjwal-backend.onrender.com/api/updateuser?${queryParams.toString()}`,{withCredentials:true})
       
       
     }
@@ -31,7 +31,7 @@ function Addadmin() {
 const searchHandler= async()=>{
 
   try{
-  const user= await Axios.put(`http://localhost:4000/api/getalluser?${queryParams.toString()}`,{withCredentials:true})
+  const user= await Axios.put(`https://ujjwal-backend.onrender.com/api/getalluser?${queryParams.toString()}`,{withCredentials:true})
     setres(user.data)
   
 }

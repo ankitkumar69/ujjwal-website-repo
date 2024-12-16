@@ -14,7 +14,7 @@ function Manageprop() {
 
         // deleting property function
         const handlePropertyDelete=async(id)=>{
-          const res=await Axios.delete(`http://localhost:4000/api/deleteproperty/${id}`,{withCredentials:true})
+          const res=await Axios.delete(`https://ujjwal-backend.onrender.com/api/deleteproperty/${id}`,{withCredentials:true})
                 console.log(res)
                 setrefetch(!refetch)
     }
@@ -25,7 +25,7 @@ function Manageprop() {
       try {
              seterr(null)
              setloding(true)
-        const singleUser = await Axios.get(`http://localhost:4000/api/allland`,{withCredentials:true})
+        const singleUser = await Axios.get(`https://ujjwal-backend.onrender.com/api/allland`,{withCredentials:true})
         setallproperty(singleUser.data)
         setloding(false)
        

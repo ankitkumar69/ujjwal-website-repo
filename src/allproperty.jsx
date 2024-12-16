@@ -26,7 +26,7 @@ const Allproperty = () => {
         setError(null);
         try {
           const properties = await axios.get(
-            `http://localhost:4000/api/getproperty?${queryParams.toString()}`
+            `https://ujjwal-backend.onrender.com/api/getproperty?${queryParams.toString()}`
           );
          
           setAllcard(properties.data);
