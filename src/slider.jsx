@@ -21,7 +21,7 @@ function Slidersection() {
 
       useEffect(()=>{
              const getallproperty=async()=>{
-                     const properties= await axios.get("http://localhost:4000/api/allland");
+                     const properties= await axios.get("https://ujjwal-backend.onrender.com/api/allland");
                      setAlldata(properties.data)
              }
 

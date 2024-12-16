@@ -73,7 +73,7 @@ function Register() {
         // this return the url in url
         const url = await singlePicUpload(profilepic);
         const registerres = await Axios.post(
-          `http://https://ujjwal-backend.onrender.com/api/register`,
+          `https://ujjwal-backend.onrender.com/api/register`,
           { ...form, profileImg: url },
           { withCredentials: true }
         );
