@@ -41,13 +41,13 @@ function Addproperty() {
         setLoading(true);
         try {
           // 
-          // const photourl = await multiuploadfile(Imgfile);
-          // const videourl = await singleVideoUpload(Videofile);
+          const photourl = await multiuploadfile(Imgfile);
+          const videourl = await singleVideoUpload(Videofile);
         
         
     
           await axios.post(
-            `https://ujjwal-backend.onrender.com/api/create`, { ...form, },{withCredentials: true });
+            `https://ujjwal-backend.onrender.com/api/create`, { ...form,videoUrl:videourl ,ImgUrlArray:photourl},{withCredentials: true });
     
           Navigate("/manageproperty");
        

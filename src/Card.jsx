@@ -1,8 +1,6 @@
 
-
-
 import Slider from 'react-slick';
-
+import { Link } from 'react-router-dom';
 
 function card(item) {
 
@@ -17,19 +15,19 @@ function card(item) {
   
    
   return (
- 
-    <div className="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+       <Link to={`/propertydetail/${item._id}`}>
+    <div className="max-w-[350px] bg-white shadow-lg rounded-lg overflow-hidden">
     {/* Image Slider */}
    { item?.ImgUrlArray?.length>0||item.videoUrl?<Slider {...settings}>
      {item?.ImgUrlArray?.length>0 &&( item?.ImgUrlArray?.map((item,index)=><img
          key={index}
         src={ item}
         alt={`Property${item} `}
-        className="h-64 w-full object-cover"
+        className="h-64 w-full object-fill"
       />))}
       
      {item?.videoUrl&& <video src={item.videoUrl} controls ></video>}
-    </Slider>:<img src='./image/imghouse.png'></img>}
+    </Slider>:<img src='./image/imghouse.png' className='h-64 w-full'></img>}
 
     {/* Property Details */}
     <div className="p-4">
@@ -48,7 +46,7 @@ function card(item) {
      
     </div>
   </div>
-
+  </Link>
   )
 }
 

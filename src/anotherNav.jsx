@@ -30,25 +30,23 @@ const NavBar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to={"/"}>
-              <span className="text-2xl font-bold text-gray-800">MyLogo</span>
+              <span className="text-2xl font-bold text-gray-800">Property Babu </span>
             </Link>
           </div>
 
           {/* Navigation Links */}
-          <div className={open?`flex flex-col md:justify-between items-center  md:flex-row w-[50vw] md:w-fit h-[70vh] md:h-fit top-12 md:top-auto right-0 bg-white absolute  md:static space-x-4 z-10 shadow-lg md:shadow-none `:"hidden md:flex md:justify-between md:gap-7"}>
+          <div className={open?`flex flex-col md:justify-between items-center  md:flex-row w-[50vw] md:w-fit h-[20vh] md:h-fit top-12 md:top-auto right-0 bg-white absolute  md:static space-x-4 z-10 shadow-lg md:shadow-none `:"hidden md:flex md:justify-between md:gap-7"}>
             <Link to="/allproperty">
               {" "}
-              <span className="text-gray-800 hover:text-gray-600">
+              <span className="gap-3 text-gray-800 font-semibold hover:text-gray-600">
                 Our property
               </span>
             </Link>
             <Link to={"/about"}>
               {" "}
-              <span className="text-gray-800 hover:text-gray-600">About</span>
+              <span className="gap-3 text-gray-800 font-semibold hover:text-gray-600">About</span>
             </Link>
-            <a href="#contact" className="text-gray-800 hover:text-gray-600">
-              Contact
-            </a>
+            
            
             {/* login  Button  and profile */}
             {registeruser||loginuser ? (
@@ -60,7 +58,7 @@ const NavBar = () => {
                   src={registeruser?registeruser?.profileImg:loginuser?.profileImg||"./image/bg-img-feature.png"}
                   className="w-9 h-9 border border-black rounded-full"
                 ></img>
-                <span className="inline-block">{registeruser?  registeruser?.firstname+" "+registeruser?.lastname:loginuser?.firstname+" "+loginuser.lastname}</span>
+                <span className="inline-block font-semibold">{registeruser?  registeruser?.firstname+" "+registeruser?.lastname:loginuser?.firstname+" "+loginuser.lastname}</span>
                 {dropdown && (
                   <div className="absolute top-8 p-2 bg-gray-400 rounded text-white font-bold z-10">
                     <ul className="">

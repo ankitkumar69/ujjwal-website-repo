@@ -32,7 +32,7 @@ function Slidersection() {
        
   const settings = {
     dots: false,
-    arrow:true,
+    arrow:false,
     infinite: true,
     speed: 500,
     slidesToShow: 3, // Number of slides to show
@@ -69,11 +69,11 @@ function Slidersection() {
   return (
      <div className=' '>
        
-      {Alldata?.length >1 && <div className='max-w-[1400px] pb-7 mx-auto p-2'>
+      {Alldata?.length >1 && <div className='max-w-[1400px] pb-7 mx-auto '>
         <h3 className='text-xl text-black   font-bold font-sans'> Our Best Deals</h3>
         <p className='mx-auto'>{error &&error}</p>
       
-         <Slider {...settings}>
+         <Slider {...settings} className=' mx-6'>
           {Alldata?.map((item,i)=><Card key={i} {...item}></Card>)}
           </Slider>
    

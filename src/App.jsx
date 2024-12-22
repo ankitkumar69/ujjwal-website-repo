@@ -12,6 +12,7 @@ import Addproperty from "./Addproperty.jsx";
 import Manageprop from "./Manageprop.jsx";
 import Addadmin from "./Addadmin.jsx";
 import Edit from "./edit.jsx";
+import Carddetail from "./card_detail.jsx"
 // import Practice from './practice.jsx'
 function App() {
   const Layout = () => {
@@ -64,6 +65,10 @@ function App() {
         {
           path: "/edit/:id",
           element: <Edit />,
+        },
+        {
+          path: "/propertydetail/:id",
+          element: <Carddetail />,
         },
       ],
     },
